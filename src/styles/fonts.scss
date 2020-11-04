@@ -1,0 +1,104 @@
+// https://github.com/rust-lang/www.rust-lang.org/blob/master/src/styles/fonts.scss
+
+// Fira Sans uses these names to refer to its font weights. Alfa Slab One has only a 400 weight,
+// which it also calls "Regular", so this map is used for that font as well.
+//
+// If another font is added, it may use different names for its weights, requiring the code to be
+// refactored. For instance, Fira Mono refers to its 600 weight as "Bold".
+$weight-names: (
+    100: "Hair",
+    200: "UltraLight",
+    300: "Light",
+    400: "Regular",
+    500: "Medium",
+    600: "SemiBold",
+    700: "Bold",
+    800: "ExtraBold",
+    900: "Heavy",
+);
+
+$style-names: (
+    italic: "Italic",
+);
+
+$format-names: (
+    eot: "embedded-opentype",
+    ttf: "truetype",
+    woff: "woff",
+    woff2: "woff2",
+);
+
+/// Produces a full font name (e.g. "Fira Sans SemiBold Italic").
+@function font($family, $weight, $style) {
+    $weight-name: " #{map-get($weight-names, $weight)}";
+    @if ($style == italic and $weight == 400) {
+        $weight-name: "";
+    }
+
+    $style-name: "";
+    @if ($style != normal) {
+        $style-name: " #{map-get($style-names, $style)}";
+    }
+
+    @return "#{$family}#{$weight-name}#{$style-name}";
+}
+
+/// Produces a whitespace-free filename, without an extension (e.g. "FiraSans-SemiBoldItalic").
+@function filename($base, $weight, $style) {
+    $weight-name: map-get($weight-names, $weight);
+    @if ($style == italic and $weight == 400) {
+        $weight-name: "";
+    }
+
+    $style-name: "";
+    @if ($style != normal) {
+        $style-name: map-get($style-names, $style);
+    }
+
+    @return "#{$base}-#{$weight-name}#{$style-name}";
+}
+
+/// Produces a list of urls to be used for the `src` property of a `@font-face` block.
+@function urls($filename, $extensions) {
+    $urls: ();
+    @each $extension in $extensions {
+        $url: url("/static/fonts/#{$extension}/#{$filename}.#{$extension}");
+        $format: format(map-get($format-names, $extension));
+
+        $urls: append($urls, $url $format, comma);
+    }
+    @return $urls;
+}
+
+/// Declares a `@font-face` block for each combination of weight, style, and unicode range.
+@mixin declare-font-faces(
+    $family,
+    $base-filename,
+    $weights,
+    $styles,
+    $formats
+) {
+    @each $weight in $weights {
+        @each $style in $styles {
+            $font: font($family, $weight, $style);
+            $filename: filename($base-filename, $weight, $style);
+
+            /* #{$font} */
+            @font-face {
+                font-family: $family;
+                font-weight: $weight;
+                font-style: $style;
+                src: local($font), local($filename), urls($filename, $formats);
+                font-display: swap;
+            }
+        }
+    }
+}
+
+@include declare-font-faces(
+    $family: "Open Sans",
+    $base-filename: "OpenSans",
+    $weights: 300 400 600 700,
+    $styles: normal italic,
+    $formats: ttf
+);
