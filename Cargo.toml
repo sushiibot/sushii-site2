@@ -1,0 +1,26 @@
+[package]
+name = "sushii2-site"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+serde_json = "1.0"
+
+[dependencies.figment]
+version = "0.9.4"
+features = ["json"]
+
+[dependencies.serde]
+version = "1.0"
+features = ["derive"]
+
+[dependencies.rocket]
+# rocket = "^0.4"
+version = "0.5.0-dev"
+git = "https://github.com/SergioBenitez/Rocket"
+
+[dependencies.rocket_contrib]
+# version = "^0.4"
+git = "https://github.com/SergioBenitez/Rocket"
+default-features = false
+features = ["handlebars_templates"]
