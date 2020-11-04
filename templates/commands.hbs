@@ -1,0 +1,16 @@
+{{#*inline "page"}}
+
+<section>
+  <h1>Commands!</h1>
+  {{#each commands }}
+  <h2>{{ @key }}</h2>
+  <ul>
+    {{#each this }}
+    <li>{{ this.name }} - {{ this.description }}</li>
+    {{/each}}
+  </ul>
+  {{/each}}
+</section>
+
+{{/inline}}
+{{~> (parent)~}}

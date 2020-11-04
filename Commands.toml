@@ -1,0 +1,43 @@
+[[meta]]
+name = "ping"
+aliases = []
+description = "Ping pong"
+required_permissions = []
+
+[[settings]]
+name = "settings list"
+aliases = []
+description = "Lists guild settings"
+required_permissions = []
+
+[[settings]]
+name = "joinmsg set/on/off/toggle"
+description = "Message on new member join"
+
+[[settings]]
+name = "joinreact set/on/off/toggle"
+description = "Reaction to new member join message"
+
+[[settings]]
+name = "leavemsg set/on/off/toggle"
+description = "Message on member leave"
+
+[[settings]]
+name = "msgchannel set/on/off/toggle"
+description = "Channel to send join / leave messages"
+
+[[settings]]
+name = "msglog set/on/off/toggle"
+description = "Channel to send message delete/edit logs"
+
+[[settings]]
+name = "modlog set/on/off/toggle"
+description = "Channel to send moderation logs"
+
+[[settings]]
+name = "memberlog set/on/off/toggle"
+description = "Channel to send member join/leave logs"
+
+[[settings]]
+name = "mutedm set/on/off/toggle"
+description = "Message to DM members on mute"
