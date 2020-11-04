@@ -1,7 +1,8 @@
 use rocket::{Request, State};
 use rocket_contrib::templates::Template;
 
-use crate::model::{template::TemplateContext, commands::CommandList};
+use crate::model::{context::TemplateContext, commands::CommandList};
+use crate::assets::ASSETS;
 
 #[get("/")]
 pub fn index() -> Template {
@@ -9,6 +10,7 @@ pub fn index() -> Template {
         title: "sushii 2",
         name: None,
         commands: None,
+        assets: &ASSETS,
         parent: "layout",
     })
 }
@@ -19,6 +21,7 @@ pub fn about() -> Template {
         title: "About",
         name: None,
         commands: None,
+        assets: &ASSETS,
         parent: "layout",
     })
 }
@@ -29,6 +32,7 @@ pub fn commands(cmds: State<CommandList>) -> Template {
         title: "Commands",
         name: None,
         commands: Some(&cmds),
+        assets: &ASSETS,
         parent: "layout",
     })
 }
@@ -39,6 +43,7 @@ pub fn hello(name: String) -> Template {
         title: "Hello",
         name: Some(name),
         commands: None,
+        assets: &ASSETS,
         parent: "layout",
     })
 }
