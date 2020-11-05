@@ -13,12 +13,12 @@
   <link rel="stylesheet" href="{{assets.css.app}}" />
 </head>
 
-<body class="w-100">
+<body class="min-vh-100 w-100">
   {{> components/nav}}
-  <main class="w-100 pv5">
+  <div class="min-vh-100 flex flex-column">
     {{~> page}}
-  </main>
-  {{> components/footer}}
+    {{> components/footer}}
+  </div>
 </body>
 
 </html>
