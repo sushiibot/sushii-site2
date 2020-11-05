@@ -1,5 +1,5 @@
-use serde::Serialize;
 use super::commands::CommandList;
+use serde::Serialize;
 
 #[derive(Serialize)]
 pub struct TemplateContext<'a> {
