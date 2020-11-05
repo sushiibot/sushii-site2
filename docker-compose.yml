@@ -5,6 +5,8 @@ services:
         container_name: sushii-site
         expose:
             - "8000"
+        volumes:
+            - ~/docker/sushii-site:/config
         networks:
             - web
         labels:
