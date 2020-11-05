@@ -7,3 +7,7 @@ docker-compose.yml
 **/.github
 **/.gitignore
 **/.env*
+/static/scripts/app*.js
+/static/styles/vendor*.css
+/static/styles/app*.css
+/static/styles/fonts*.css
