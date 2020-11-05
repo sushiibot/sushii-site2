@@ -1,8 +1,8 @@
-use std::fs;
-use std::collections::hash_map::DefaultHasher;
-use std::hash::Hasher;
-use sass_rs::{compile_file, Options};
 use lazy_static::lazy_static;
+use sass_rs::{compile_file, Options};
+use std::collections::hash_map::DefaultHasher;
+use std::fs;
+use std::hash::Hasher;
 
 use crate::model::context::{AssetFiles, CSSFiles, JSFiles};
 

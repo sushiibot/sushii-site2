@@ -1,16 +1,16 @@
 use super::{rocket, TemplateContext};
 
-use rocket::local::blocking::Client;
 use rocket::http::Method::*;
 use rocket::http::Status;
+use rocket::local::blocking::Client;
 use rocket_contrib::templates::Template;
 
 macro_rules! dispatch {
-    ($method:expr, $path:expr, |$client:ident, $response:ident| $body:expr) => ({
+    ($method:expr, $path:expr, |$client:ident, $response:ident| $body:expr) => {{
         let $client = Client::tracked(rocket()).unwrap();
         let $response = $client.req($method, $path).dispatch();
         $body
-    })
+    }};
 }
 
 #[test]

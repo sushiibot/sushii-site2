@@ -1,17 +1,25 @@
-#[macro_use] extern crate rocket;
+#[macro_use]
+extern crate rocket;
 
 mod assets;
 mod catchers;
 mod model;
 mod routes;
 
-#[cfg(test)] mod tests;
+#[cfg(test)]
+mod tests;
 
-use rocket_contrib::{templates::Template, serve::{StaticFiles, crate_relative}};
-use figment::{Figment, providers::{Format, Toml, Json, Env}};
+use figment::{
+    providers::{Format, Json, Toml},
+    Figment,
+};
+use rocket_contrib::{
+    serve::StaticFiles,
+    templates::Template,
+};
 
-use crate::routes::*;
 use crate::model::commands::CommandList;
+use crate::routes::*;
 
 #[launch]
 fn rocket() -> rocket::Rocket {
@@ -23,7 +31,7 @@ fn rocket() -> rocket::Rocket {
 
     rocket::ignite()
         .manage(cmds)
-        .mount("/static", StaticFiles::from(crate_relative!("/static")))
+        .mount("/static", StaticFiles::from("./static"))
         .mount("/", routes![index, commands, about, help, hello])
         .register(catchers![catchers::not_found])
         .attach(Template::fairing())
