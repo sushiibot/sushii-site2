@@ -1,11 +1,11 @@
 {{#*inline "page"}}
 
-<section class="ph3 ph5-ns pt4">
+<section class="ph3 ph5-ns pt4 pt6 flex-grow">
   <h1>Commands!</h1>
-  {{#each commands }}
-  <h2>{{ @key }}</h2>
+  {{#each commands.groups }}
+  <h2>{{ this.name }}</h2>
   <ul>
-    {{#each this }}
+    {{#each this.commands }}
     <li>{{ this.name }} - {{ this.description }}</li>
     {{/each}}
   </ul>
