@@ -9,7 +9,7 @@ pub fn index() -> Template {
     Template::render(
         "index",
         &TemplateContext {
-            title: "sushii 2",
+            title: "Home",
             name: None,
             commands: None,
             assets: &ASSETS,
