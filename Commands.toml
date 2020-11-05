@@ -14,38 +14,64 @@ description = "Guild settings"
 
 [[groups.commands]]
 name = "settings list"
-aliases = []
 description = "Lists guild settings"
-required_permissions = []
 
 [[groups.commands]]
-name = "joinmsg set/on/off/toggle"
-description = "Message on new member join"
+name = "joinmsg set"
+description = "Set the message sent on new member join to the configured msgchannel.  You can use the following replacements: <username>, <mention>, <server>"
+usage = "[message]"
 
 [[groups.commands]]
-name = "joinreact set/on/off/toggle"
-description = "Reaction to new member join message"
+name = "joinmsg on/off/toggle"
+description = "Enable or disable message on new member join"
+examples = ["joinmsg on", "joinmsg off", "joinmsg toggle"]
 
 [[groups.commands]]
-name = "leavemsg set/on/off/toggle"
-description = "Message on member leave"
+name = "joinreact set"
+description = "Set the reaction to new member join message"
+usage = "[reaction]"
+examples = ["joinreact set 👋"]
 
 [[groups.commands]]
-name = "msgchannel set/on/off/toggle"
-description = "Channel to send join / leave messages"
+name = "joinreact on/off/toggle"
+description = "Enable or disable reaction to new member join message"
+
+[[groups.commands]]
+name = "leavemsg set"
+description = "Set the message on member leave to the configured msgchannel"
+
+[[groups.commands]]
+name = "leavemsg on/off/toggle"
+description = "Enable or disable message sent on member leave"
+
+[[groups.commands]]
+name = "msgchannel set"
+description = "Set the channel to send join / leave messages"
 
 [[groups.commands]]
 name = "msglog set/on/off/toggle"
 description = "Channel to send message delete/edit logs"
 
 [[groups.commands]]
-name = "modlog set/on/off/toggle"
-description = "Channel to send moderation logs"
+name = "modlog set"
+description = "Set the channel to send moderation logs"
+
+[[groups.commands]]
+name = "modlog on/off/toggle"
+description = "Enable or disable moderation logs"
 
 [[groups.commands]]
 name = "memberlog set/on/off/toggle"
-description = "Channel to send member join/leave logs"
+description = "Set the channel to send member join/leave logs"
+
+[[groups.commands]]
+name = "memberlog on/off/toggle"
+description = "Enable or disable member join/leave logs"
+
+[[groups.commands]]
+name = "mutedm set"
+description = "Set the message sent to DM members when they are muted"
 
 [[groups.commands]]
 name = "mutedm set/on/off/toggle"
-description = "Message to DM members on mute"
+description = "Enable or disable sending messages to DM members on mute"

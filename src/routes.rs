@@ -37,6 +37,17 @@ pub fn commands(cmds: State<CommandList>) -> Template {
     })
 }
 
+#[get("/help")]
+pub fn help() -> Template {
+    Template::render("help", &TemplateContext {
+        title: "Help",
+        name: None,
+        commands: None,
+        assets: &ASSETS,
+        parent: "layout",
+    })
+}
+
 #[get("/hello/<name>")]
 pub fn hello(name: String) -> Template {
     Template::render("hello", &TemplateContext {
