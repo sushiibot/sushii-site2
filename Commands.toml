@@ -1,43 +1,51 @@
-[[meta]]
+[[groups]]
+name = "Meta"
+description = "Commands related to sushii itself"
+
+[[groups.commands]]
 name = "ping"
 aliases = []
 description = "Ping pong"
 required_permissions = []
 
-[[settings]]
+[[groups]]
+name = "Settings"
+description = "Guild settings"
+
+[[groups.commands]]
 name = "settings list"
 aliases = []
 description = "Lists guild settings"
 required_permissions = []
 
-[[settings]]
+[[groups.commands]]
 name = "joinmsg set/on/off/toggle"
 description = "Message on new member join"
 
-[[settings]]
+[[groups.commands]]
 name = "joinreact set/on/off/toggle"
 description = "Reaction to new member join message"
 
-[[settings]]
+[[groups.commands]]
 name = "leavemsg set/on/off/toggle"
 description = "Message on member leave"
 
-[[settings]]
+[[groups.commands]]
 name = "msgchannel set/on/off/toggle"
 description = "Channel to send join / leave messages"
 
-[[settings]]
+[[groups.commands]]
 name = "msglog set/on/off/toggle"
 description = "Channel to send message delete/edit logs"
 
-[[settings]]
+[[groups.commands]]
 name = "modlog set/on/off/toggle"
 description = "Channel to send moderation logs"
 
-[[settings]]
+[[groups.commands]]
 name = "memberlog set/on/off/toggle"
 description = "Channel to send member join/leave logs"
 
-[[settings]]
+[[groups.commands]]
 name = "mutedm set/on/off/toggle"
 description = "Message to DM members on mute"

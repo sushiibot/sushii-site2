@@ -1,5 +1,4 @@
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Permission {
@@ -18,7 +17,13 @@ pub struct Command {
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
+pub struct CommandGroup {
+    pub name: String,
+    pub description: Option<String>,
+    pub commands: Vec<Command>,
+}
+
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct CommandList {
-    #[serde(flatten)]
-    pub groups: HashMap<String, Vec<Command>>,
+    pub groups: Vec<CommandGroup>,
 }
