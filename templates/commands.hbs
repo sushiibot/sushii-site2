@@ -4,19 +4,19 @@
     <h1>Commands</h1>
 
     {{#each commands.groups }}
-    <h2>{{ this.name }}</h2>
+    <h2 class="ttu fw3 tracked">{{ this.name }}</h2>
     <p>{{ this.description }}</p>
 
-    <ul class="list pl2">
+    <ul class="list br3 pa2 pa3-ns ba b--white-10">
         {{#each this.commands }}
         <li class="mv3">
             <p>
-                <span class="blue">{{ this.name }}</span>
+                <span class="fw6 blue">{{ this.name }}</span>
                 <span class="light-red">{{ this.usage }}</span>
             </p>
 
             <div class="bl bw1 b--gray">
-                <p class="white-90 ml2">
+                <p class="white-90 ml2 measure lh-copy">
                     {{ this.description }}
                 </p>
 
@@ -26,8 +26,8 @@
 
                 {{#each this.examples}}
                 <ul class="list pl2">
-                    <li class="mv2">
-                        {{ this }}
+                    <li class="mv1 pa1 code bg-shadow dib">
+                        > {{ this }}
                     </li>
                 </ul>
                 {{/each}}
