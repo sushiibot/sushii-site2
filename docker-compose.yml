@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+    sushii-site:
+        image: docker.pkg.github.com/drklee3/sushii-site-2/sushii-site-2:latest
+        container_name: sushii-site
+        expose:
+            - "8000"
+        networks:
+            - web
+        labels:
+            - "traefik.http.routers.sushii-site.rule=Host(`2.sushii.xyz`)"
+            - "traefik.http.routers.sushii-site.entrypoints=secure"
+            - "traefik.http.routers.sushii-site.tls.certresolver=acme"
+networks:
+    web:
+        name: sushii-2_web
+        external: true
