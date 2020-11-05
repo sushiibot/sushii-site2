@@ -20,13 +20,11 @@ fn rocket() -> rocket::Rocket {
         .merge(Json::file("Commands.json"))
         .extract()
         .expect("Missing commands list");
-    
-    println!("commands: {:#?}", cmds);
 
     rocket::ignite()
         .manage(cmds)
         .mount("/static", StaticFiles::from(crate_relative!("/static")))
-        .mount("/", routes![index, commands, about, hello])
+        .mount("/", routes![index, commands, about, help, hello])
         .register(catchers![catchers::not_found])
         .attach(Template::fairing())
 }
