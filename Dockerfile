@@ -17,7 +17,9 @@ COPY ./static ./static
 COPY ./templates ./templates
 COPY ./Commands.toml ./
 
-# RUN cargo test --release
+# build for release, remove dummy compiled files
+RUN rm ./target/release/deps/sushii_site2*
+
 RUN cargo build --release
 
 ## Final base image with only the picatch binary
