@@ -1,4 +1,5 @@
 $body-font: "Open Sans", Helvetica, Arial, sans-serif;
+@import "colors.scss";
 
 body {
     font-family: $body-font;
@@ -10,46 +11,7 @@ body {
     flex-grow: 1;
 }
 
-// colors, based off ayu theme
-
-$light-orange: #ffcc66;
-$blue: #73d0ff;
-$light-blue: #5ccfe6;
-$light-red: #f28779;
-$shadow: #141925;
-
-.light-orange {
-    color: $light-orange;
-}
-
-.bg-light-orange {
-    background-color: $light-orange;
-}
-
-.blue {
-    color: $blue;
-}
-
-.bg-blue {
-    background-color: $blue;
-}
-
-.light-blue {
-    color: $light-blue;
-}
-
-.bg-light-blue {
-    background-color: $light-blue;
-}
-
-.light-red {
-    color: $light-red;
-}
-
-.shadow {
-    color: $shadow;
-}
-
-.bg-shadow {
-    background-color: $shadow;
+.anchor-target {
+    padding-top: 6rem;
+    margin-top: -6rem;
 }
