@@ -10,7 +10,7 @@ mod routes;
 mod tests;
 
 use figment::{
-    providers::{Format, Json, Toml},
+    providers::{Format, Json, Toml, Yaml},
     Figment,
 };
 use rocket_contrib::{
@@ -26,6 +26,7 @@ fn rocket() -> rocket::Rocket {
     let cmds: CommandList = Figment::new()
         .merge(Toml::file("Commands.toml"))
         .merge(Json::file("Commands.json"))
+        .merge(Yaml::file("Commands.yml"))
         .extract()
         .expect("Missing commands list");
 

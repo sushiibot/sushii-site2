@@ -10,7 +10,7 @@ lazy_static = "1.4.0"
 
 [dependencies.figment]
 version = "0.9.4"
-features = ["json"]
+features = ["json", "yaml"]
 
 [dependencies.serde]
 version = "1.0"
