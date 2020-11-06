@@ -933,6 +933,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "prometheus"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dd0ced56dee39a6e960c15c74dc48849d614586db2eaada6497477af7c7811cd"
+dependencies = [
+ "cfg-if 0.1.10",
+ "fnv",
+ "lazy_static",
+ "protobuf",
+ "spin",
+ "thiserror",
+]
+
+[[package]]
+name = "protobuf"
+version = "2.18.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6d147edb77bcccbfc81fabffdc7bd50c13e103b15ca1e27515fe40de69a5776b"
+
+[[package]]
 name = "quick-error"
 version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1092,6 +1112,15 @@ dependencies = [
  "uncased",
  "unicode-xid",
  "version_check",
+]
+
+[[package]]
+name = "rocket_prometheus"
+version = "0.6.0"
+source = "git+https://github.com/sd2k/rocket_prometheus?branch=async#d1ca102655cff0e572d437a894031fa0733f455e"
+dependencies = [
+ "prometheus",
+ "rocket",
 ]
 
 [[package]]
@@ -1256,6 +1285,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "spin"
+version = "0.5.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6e63cff320ae2c57904679ba7cb63280a3dc4613885beafb148ee7bf9aa9042d"
+
+[[package]]
 name = "standback"
 version = "0.2.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1327,6 +1362,7 @@ dependencies = [
  "lazy_static",
  "rocket",
  "rocket_contrib",
+ "rocket_prometheus",
  "sass-rs",
  "serde",
  "serde_json",
@@ -1341,6 +1377,26 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-xid",
+]
+
+[[package]]
+name = "thiserror"
+version = "1.0.22"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0e9ae34b84616eedaaf1e9dd6026dbe00dcafa92aa0c8077cb69df1fcfe5e53e"
+dependencies = [
+ "thiserror-impl",
+]
+
+[[package]]
+name = "thiserror-impl"
+version = "1.0.22"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9ba20f23e85b10754cd195504aebf6a27e2e6cbe28c17778a0c930724628dd56"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]

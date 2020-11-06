@@ -17,6 +17,7 @@ use rocket_contrib::{
     serve::StaticFiles,
     templates::Template,
 };
+use rocket_prometheus::PrometheusMetrics;
 
 use crate::model::commands::CommandList;
 use crate::routes::*;
@@ -30,10 +31,14 @@ fn rocket() -> rocket::Rocket {
         .extract()
         .expect("Missing commands list");
 
+    let prometheus = PrometheusMetrics::new();
+
     rocket::ignite()
         .manage(cmds)
+        .attach(prometheus.clone())
+        .attach(Template::fairing())
+        .mount("/metrics", prometheus)
         .mount("/static", StaticFiles::from("./static"))
         .mount("/", routes![index, commands, about, help, hello])
         .register(catchers![catchers::not_found])
-        .attach(Template::fairing())
 }

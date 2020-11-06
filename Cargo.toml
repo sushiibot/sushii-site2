@@ -26,3 +26,7 @@ git = "https://github.com/SergioBenitez/Rocket"
 git = "https://github.com/SergioBenitez/Rocket"
 default-features = false
 features = ["handlebars_templates", "serve"]
+
+[dependencies.rocket_prometheus]
+git = "https://github.com/sd2k/rocket_prometheus"
+branch = "async"
