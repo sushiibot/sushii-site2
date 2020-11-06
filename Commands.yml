@@ -1,0 +1,186 @@
+groups:
+    - name: Meta
+      description: Commands related to sushii itself
+      commands:
+          - name: ping
+            description: Pong
+            required_permissions: []
+
+          - name: prefix
+            description: Set the bot prefix for this guild. Use without an argument to get the current prefix
+            usage: "(prefix)"
+            examples:
+                - prefix
+                - prefix $
+
+          - name: invite
+            description: Get the invite link for sushii to add to another server
+
+          - name: about
+            description: Get information about sushii
+
+    - name: moderation
+      description: Moderation commands
+      commands:
+          - name: prune
+            description: Delete bulk messages between 1 and 99 messages.
+            usage: "[num messages]"
+            examples:
+                - prune 30
+
+          - name: ban
+            description: >-
+                Ban one or more users. IDs or mentions can be separated with a 
+                space or comma. Users do not need to be in the guild.
+            usage: "[one or more user IDs or mentions] (reason)"
+            examples:
+                - ban 963258741258369 741258963258741 raiders
+
+          - name: unban
+            description: >-
+                Unban one or more users. IDs or mentions can be separated with a 
+                space or comma.
+            usage: "[one or more user IDs or mentions] (reason)"
+            examples:
+                - unban 963258741258369 741258963258741 accidental ban
+
+          - name: kick
+            description: >-
+                Kick one or more users. IDs or mentions can be separated with a 
+                space or comma.
+            usage: "[one or more user IDs or mentions] (reason)"
+            examples:
+                - kick 963258741258369 741258963258741 raiders
+
+          - name: mute
+            description: >-
+                Mute one or more users. IDs or mentions can be separated with a 
+                space or comma.
+            usage: "[one or more user IDs or mentions] (duration) (reason)"
+            examples:
+                - mute 963258741258369 741258963258741 spamming
+                - mute 963258741258369 741258963258741 1 day spamming
+
+          - name: unmute
+            description: >-
+                Unmute one or more users. IDs or mentions can be separated with a 
+                space or comma.
+            usage: "[one or more user IDs or mentions] (reason)"
+            examples:
+                - unmute 963258741258369 741258963258741 accidental mute
+
+          - name: listmutes
+            description: >-
+                List currently ongoing mutes in the guild, with the user, mute
+                duration, and duration left.
+
+          - name: warn
+            description: >-
+                Warn one or more users. This is mainly useful for keeping track
+                of misbehavior by users via the history command, as warning does
+                not notify the user as of now. IDs or mentions can be separated
+                with a space or comma.
+            usage: "[one or more user IDs or mentions] (reason)"
+            examples:
+                - warn 963258741258369 741258963258741 spamming
+
+          - name: history
+            description: >-
+                Show the case history for a given user. The actions warn, 
+                mute, kick, ban will be shown.
+            usage: "[ID or mention]"
+            examples:
+                - history 963258741258369
+
+          - name: reason
+            description: >-
+                Set the reason for a moderation case. This will also set the
+                moderator who performed this action. If a range is provided (eg.
+                12-15), it will update all cases (inclusive) 12, 13, 14, 15 with
+                the given reason for easier bulk actions.
+            usage: "[latest or case ID or case ID range] [reason]"
+            examples:
+                - reason latest spamming
+                - reason 12 spamming
+                - reason 12-15 spamming
+
+    - name: Roles
+      description: Self assigned role settings
+      commands:
+          - name: roles set
+            description: Set the roles configuration. Supports both JSON and TOML formats.
+            usage: "[config]"
+
+          - name: roles get
+            description: Get the current role configuration
+
+          - name: setchannel
+            description: Set the channel for role assignments
+
+          - name: sendinfo
+            aliases: ["sendhelp"]
+            description: >-
+                Send roles help message to role channel for members as a 
+                reference for all available role groups, role names, and limits
+
+          - name: listids
+            description: List all the current guild roles and IDs
+
+    - name: Settings
+      description: Guild settings
+      commands:
+          - name: settings list
+            description: Lists guild settings
+
+          - name: joinmsg set
+            description: >-
+                Set the message sent on new member join to the configured msgchannel. 
+                You can use the following replacements: <username>, <mention>,
+                <server>
+            usage: "[message]"
+
+          - name: joinmsg on/off/toggle
+            description: Enable or disable message on new member join
+            examples:
+                - joinmsg on
+                - joinmsg off
+                - joinmsg toggle
+
+          - name: joinreact set
+            description: Set the reaction to new member join message
+            usage: "[reaction]"
+            examples:
+                - "joinreact set 👋"
+
+          - name: joinreact on/off/toggle
+            description: Enable or disable reaction to new member join message
+
+          - name: leavemsg set
+            description: Set the message on member leave to the configured msgchannel
+
+          - name: leavemsg on/off/toggle
+            description: Enable or disable message sent on member leave
+
+          - name: msgchannel set
+            description: Set the channel to send join / leave messages
+
+          - name: msglog set/on/off/toggle
+            description: Channel to send message delete/edit logs
+
+          - name: modlog set
+            description: Set the channel to send moderation logs
+
+          - name: modlog on/off/toggle
+            description: Enable or disable moderation logs
+
+          - name: memberlog set/on/off/toggle
+            description: Set the channel to send member join/leave logs
+
+          - name: memberlog on/off/toggle
+            description: Enable or disable member join/leave logs
+
+          - name: mutedm set
+            description: Set the message sent to DM members when they are muted
+
+          - name: mutedm set/on/off/toggle
+            description: Enable or disable sending messages to DM members on mute

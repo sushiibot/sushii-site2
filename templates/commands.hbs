@@ -2,6 +2,18 @@
 
 <section class="ph3 ph5-ns pt6 pb4 flex-grow">
     <h1>Commands</h1>
+    <p class="white-90 lh-copy">
+        The default prefix for sushii is <span class="code bg-shadow">s!!</span>.
+        You can also <span class="code bg-shadow">@sushii</span> the bot as the prefix.
+        <br>
+        Required arguments are in <span class="code bg-shadow">[brackets]</span>
+        <br>
+        Optional arguments are in <span class="code bg-shadow">(parentheses)</span>
+        <br>
+        Some commands have a <span class="code bg-shadow light-red">REQUIRED_PERMISSION</span> or
+        <span class="code bg-shadow light-orange">OPTIONAL_PERMISSION</span> for the
+        user invoking the command to use additional functionality.
+    </p>
 
     {{#each commands.groups }}
     <h2 class="ttu fw3 tracked">{{ this.name }}</h2>
