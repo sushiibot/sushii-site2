@@ -16,7 +16,10 @@
     </p>
 
     {{#each commands.groups }}
-    <h2 class="ttu fw3 tracked">{{ this.name }}</h2>
+    <h2 class="ttu fw3 tracked">
+        <a href="#{{ this.name }}" class="link blue">#</a>
+        <span id="{{ this.name }}" class="anchor-target"></span>
+        {{ this.name }}</h2>
     <p>{{ this.description }}</p>
 
     <ul class="list br3 pa2 pa3-ns ba b--white-10">

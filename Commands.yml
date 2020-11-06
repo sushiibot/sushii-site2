@@ -1,5 +1,5 @@
 groups:
-    - name: Meta
+    - name: meta
       description: Commands related to sushii itself
       commands:
           - name: ping
@@ -104,7 +104,7 @@ groups:
                 - reason 12 spamming
                 - reason 12-15 spamming
 
-    - name: Roles
+    - name: roles
       description: Self assigned role settings
       commands:
           - name: roles set
@@ -126,7 +126,7 @@ groups:
           - name: listids
             description: List all the current guild roles and IDs
 
-    - name: Settings
+    - name: settings
       description: Guild settings
       commands:
           - name: settings list
