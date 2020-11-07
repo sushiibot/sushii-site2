@@ -30,22 +30,45 @@
                 <span class="light-red">{{ this.usage }}</span>
             </p>
 
-            <div class="bl bw1 b--gray">
-                <p class="white-90 ml2 measure lh-copy">
-                    {{ this.description }}
-                </p>
+            <div class="w-100 bl bw1 pl2 bg-shadow br2 b--white-80 flex flex-wrap">
+                {{! Command description }}
+                <div class="w-100 w-50-l">
+                    <p class="white-90 pa2 pl3 measure lh-copy">
+                        {{ this.description }}
+                    </p>
+                </div>
+                <div class="w-100 w-50-l">
+                    {{# if this.examples}}
+                    <p class="white-90 ma2 ml0 measure fw6">Examples</p>
+                    {{/if}}
 
-                {{# if this.examples}}
-                <p class="white-90 ml2">Examples:</p>
-                {{/if}}
+                    {{# if this.examples}}
+                    {{! Example list }}
+                    <ul class="list pa0 mb3 mr3 discord-bg br2 ba b--white-10">
+                        {{#each this.examples}}
+                        {{! Example Discord message card }}
+                        <li class="pa1 flex pa2 discord-bg-hover">
+                            {{! Avatar }}
+                            <img src="/static/images/meowmeow.jpg" class="br-100 h3 w3 pointer"
+                                title="Photo of a kitty staring at you">
+                            {{! Author + Message }}
+                            <div class="ml3 flex-grow">
+                                <p class="lh-copy ma0 mt1">
+                                    <span class="fw6 light-red underline-hover pointer">User</span> <span
+                                        class="gray f7 ml1">Today at
+                                        12:30
+                                        PM</span>
+                                </p>
+                                <p class="lh-copy ma0 select-all">
+                                    s!!{{ this }}
+                                </p>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
 
-                {{#each this.examples}}
-                <ul class="list pl2">
-                    <li class="mv1 pa1 code bg-shadow dib">
-                        > {{ this }}
-                    </li>
-                </ul>
-                {{/each}}
+                    {{/if}}
+                </div>
             </div>
         </li>
         {{/each}}

@@ -41,3 +41,15 @@ $shadow: #141925;
 .bg-shadow {
     background-color: $shadow;
 }
+
+// Discord colors for example
+$discord-bg: #36393f;
+$discord-bg-hover: rgba(4, 4, 5, 0.07);
+
+.discord-bg {
+    background-color: $discord-bg;
+}
+
+.discord-bg-hover:hover {
+    background-color: $discord-bg-hover;
+}
