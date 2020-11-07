@@ -114,16 +114,16 @@ groups:
           - name: roles get
             description: Get the current role configuration
 
-          - name: setchannel
+          - name: roles setchannel
             description: Set the channel for role assignments
 
-          - name: sendinfo
+          - name: roles sendinfo
             aliases: ["sendhelp"]
             description: >-
                 Send roles help message to role channel for members as a 
                 reference for all available role groups, role names, and limits
 
-          - name: listids
+          - name: roles listids
             description: List all the current guild roles and IDs
 
     - name: settings
@@ -132,55 +132,55 @@ groups:
           - name: settings list
             description: Lists guild settings
 
-          - name: joinmsg set
+          - name: settings joinmsg set
             description: >-
                 Set the message sent on new member join to the configured msgchannel. 
                 You can use the following replacements: <username>, <mention>,
                 <server>
             usage: "[message]"
 
-          - name: joinmsg on/off/toggle
+          - name: settings joinmsg on/off/toggle
             description: Enable or disable message on new member join
             examples:
-                - joinmsg on
-                - joinmsg off
-                - joinmsg toggle
+                - settings joinmsg on
+                - settings joinmsg off
+                - settings joinmsg toggle
 
-          - name: joinreact set
+          - name: settings joinreact set
             description: Set the reaction to new member join message
             usage: "[reaction]"
             examples:
-                - "joinreact set 👋"
+                - "settings joinreact set 👋"
 
-          - name: joinreact on/off/toggle
+          - name: settings joinreact on/off/toggle
             description: Enable or disable reaction to new member join message
 
-          - name: leavemsg set
+          - name: settings leavemsg set
             description: Set the message on member leave to the configured msgchannel
 
-          - name: leavemsg on/off/toggle
+          - name: settings leavemsg on/off/toggle
             description: Enable or disable message sent on member leave
 
-          - name: msgchannel set
+          - name: settings msgchannel set
             description: Set the channel to send join / leave messages
 
-          - name: msglog set/on/off/toggle
+          - name: settings msglog set/on/off/toggle
             description: Channel to send message delete/edit logs
 
-          - name: modlog set
+          - name: settings modlog set
             description: Set the channel to send moderation logs
 
-          - name: modlog on/off/toggle
+          - name: settings modlog on/off/toggle
             description: Enable or disable moderation logs
 
-          - name: memberlog set/on/off/toggle
+          - name: settings memberlog set/on/off/toggle
             description: Set the channel to send member join/leave logs
 
-          - name: memberlog on/off/toggle
+          - name: settings memberlog on/off/toggle
             description: Enable or disable member join/leave logs
 
-          - name: mutedm set
+          - name: settings mutedm set
             description: Set the message sent to DM members when they are muted
 
-          - name: mutedm set/on/off/toggle
+          - name: settings mutedm set/on/off/toggle
             description: Enable or disable sending messages to DM members on mute
