@@ -33,18 +33,18 @@
             <div class="w-100 bl bw1 pl2 bg-shadow br2 b--white-80 flex flex-wrap">
                 {{! Command description }}
                 <div class="w-100 w-50-l">
-                    <p class="white-90 pa2 pl3 measure lh-copy">
+                    <p class="white-90 ma0 pa3 measure lh-copy">
                         {{ this.description }}
                     </p>
                 </div>
                 <div class="w-100 w-50-l">
                     {{# if this.examples}}
-                    <p class="white-90 ma2 ml0 measure fw6">Examples</p>
+                    <p class="white-90 mb0 pa2 pl3 measure fw6">Examples</p>
                     {{/if}}
 
                     {{# if this.examples}}
                     {{! Example list }}
-                    <ul class="list pa0 mb3 mr3 discord-bg br2 ba b--white-10">
+                    <ul class="list pa0 ma3 mt0 discord-bg br2 ba b--white-10">
                         {{#each this.examples}}
                         {{! Example Discord message card }}
                         <li class="pa1 flex pa2 discord-bg-hover">
