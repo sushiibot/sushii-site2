@@ -25,8 +25,10 @@ groups:
           - name: prune
             description: Delete bulk messages between 1 and 99 messages.
             usage: "[num messages]"
+            aliases: ["p"]
             examples:
                 - prune 30
+                - p 5
 
           - name: ban
             description: >-
@@ -60,6 +62,36 @@ groups:
             examples:
                 - mute 963258741258369 741258963258741 spamming
                 - mute 963258741258369 741258963258741 1 day spamming
+
+          - name: mute setduration
+            aliases:
+                - mute s
+                - mute set
+                - mute setd
+                - mute setdur
+                - mute settime
+            description: >-
+                Change the duration of an existing mute. Use indefinite (or
+                indef, inf, none) to remove duration.
+            usage: "[user ID or mention] (new duration or indefinite)"
+            examples:
+                - mute setduration 963258741258369 3 days
+                - mute s 741258963258741 indefinite
+
+          - name: mute addduration
+            aliases:
+                - mute a
+                - mute add
+                - mute addd
+                - mute adddur
+                - mute addtime
+                - mute extend
+            description: >-
+                Add to the duration of an existing mute.
+            usage: "[user ID or mention] (duration)"
+            examples:
+                - mute addduration 963258741258369 1 day
+                - mute a 741258963258741 30 min
 
           - name: unmute
             description: >-
