@@ -29,6 +29,14 @@
                 <span class="fw6 blue">{{ this.name }}</span>
                 <span class="light-red">{{ this.usage }}</span>
             </p>
+            {{# if this.aliases }}
+            <p class="white-80 measure">
+                <span class="white-70">Aliases:</span>
+                {{#each this.aliases }}
+                <span class="mr2 pa1 ph2 bg-medium-grey hover-bg-dark-blue br1">{{ this }}</span>
+                {{/each}}
+            </p>
+            {{/if}}
 
             <div class="w-100 bl bw1 pl2 bg-shadow br2 b--white-80 flex flex-wrap">
                 {{! Command description }}
@@ -44,13 +52,13 @@
 
                     {{# if this.examples}}
                     {{! Example list }}
-                    <ul class="list pa0 ma3 mt0 discord-bg br2 ba b--white-10">
+                    <ul class="list pa0 ma3 mt0 bg-discord-dark br2 ba b--white-10">
                         {{#each this.examples}}
                         {{! Example Discord message card }}
-                        <li class="pa1 flex pa2 discord-bg-hover">
+                        <li class="pa1 flex pa2 hover-bg-discord-darken">
                             {{! Avatar }}
-                            <img src="/static/images/meowmeow.jpg" class="br-100 h3 w3 pointer"
-                                title="Photo of a kitty staring at you">
+                            <img src="/static/images/meowmeow.jpg" class="br-100 h3 w3 pointer dim-active"
+                                title="meowmeow">
                             {{! Author + Message }}
                             <div class="ml3 flex-grow">
                                 <p class="lh-copy ma0 mt1">
