@@ -19,3 +19,12 @@ body {
 .select-all {
     user-select: all;
 }
+
+.dim-active {
+    opacity: 1;
+}
+
+.dim-active:active {
+    opacity: 0.7;
+    transition: opacity 0.25s ease-out;
+}

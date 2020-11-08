@@ -1,55 +1,29 @@
 // colors, based off ayu theme
 
-$light-orange: #ffcc66;
-$blue: #73d0ff;
-$light-blue: #5ccfe6;
-$light-red: #f28779;
-$shadow: #141925;
+$colors: (
+    "light-orange": #ffcc66,
+    "blue": #73d0ff,
+    "dark-blue": #33415e,
+    "light-blue": #5ccfe6,
+    "light-red": #f28779,
+    "shadow": #141925,
+    "medium-grey": #707a8c66,
+    "light-grey": #707a8ccc,
+    // Discord colors for examples
+    "discord-dark": #36393f,
+    "discord-darken": rgba(4, 4, 5, 0.07),
+);
 
-.light-orange {
-    color: $light-orange;
-}
+@each $name, $color in $colors {
+    .#{$name} {
+        color: $color;
+    }
 
-.bg-light-orange {
-    background-color: $light-orange;
-}
+    .bg-#{$name} {
+        background-color: $color;
+    }
 
-.blue {
-    color: $blue;
-}
-
-.bg-blue {
-    background-color: $blue;
-}
-
-.light-blue {
-    color: $light-blue;
-}
-
-.bg-light-blue {
-    background-color: $light-blue;
-}
-
-.light-red {
-    color: $light-red;
-}
-
-.shadow {
-    color: $shadow;
-}
-
-.bg-shadow {
-    background-color: $shadow;
-}
-
-// Discord colors for example
-$discord-bg: #36393f;
-$discord-bg-hover: rgba(4, 4, 5, 0.07);
-
-.discord-bg {
-    background-color: $discord-bg;
-}
-
-.discord-bg-hover:hover {
-    background-color: $discord-bg-hover;
+    .hover-bg-#{$name}:hover {
+        background-color: $color;
+    }
 }
