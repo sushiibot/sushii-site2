@@ -30,12 +30,12 @@
                 <span class="light-red">{{ this.usage }}</span>
             </p>
             {{# if this.aliases }}
-            <p class="white-80 measure">
-                <span class="white-70">Aliases:</span>
+            <div class="mb3">
+                <p class="white-70 dib ma0">Aliases:</p>
                 {{#each this.aliases }}
-                <span class="mr2 pa1 ph2 bg-medium-grey hover-bg-dark-blue br1">{{ this }}</span>
+                <span class="mt0-l mt2 mr2 pa1 ph2 bg-medium-grey hover-bg-dark-blue br1 dib">{{ this }}</span>
                 {{/each}}
-            </p>
+            </div>
             {{/if}}
 
             <div class="w-100 bl bw1 pl2 bg-shadow br2 b--white-80 flex flex-wrap">
