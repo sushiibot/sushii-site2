@@ -37,7 +37,7 @@ COPY --from=build /usr/src/sushii-site2/static ./static
 # Templates are read from file during runtime
 COPY ./templates ./templates
 # Configurations needs to be in pwd during runtimme
-COPY ./Rocket.toml ./Commands.toml ./
+COPY ./Rocket.toml ./Commands.yml ./
 
 EXPOSE 8000
 
