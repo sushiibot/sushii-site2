@@ -13,6 +13,7 @@ use figment::{
     providers::{Format, Json, Toml, Yaml},
     Figment,
 };
+use rocket::fairing::AdHoc;
 use rocket_contrib::{
     serve::StaticFiles,
     templates::Template,
@@ -20,6 +21,7 @@ use rocket_contrib::{
 use rocket_prometheus::PrometheusMetrics;
 
 use crate::model::commands::CommandList;
+use crate::model::config::Config;
 use crate::routes::*;
 
 #[launch]
@@ -37,8 +39,9 @@ fn rocket() -> rocket::Rocket {
         .manage(cmds)
         .attach(prometheus.clone())
         .attach(Template::fairing())
+        .attach(AdHoc::config::<Config>())
         .mount("/metrics", prometheus)
         .mount("/static", StaticFiles::from("./static"))
-        .mount("/", routes![index, commands, about, help, hello])
+        .mount("/", routes![index, commands, about, help, hello, invite])
         .register(catchers![catchers::not_found])
 }

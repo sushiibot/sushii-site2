@@ -1,8 +1,9 @@
 use rocket::State;
+use rocket::response::Redirect;
 use rocket_contrib::templates::Template;
 
 use crate::assets::ASSETS;
-use crate::model::{commands::CommandList, context::TemplateContext};
+use crate::model::{commands::CommandList, context::TemplateContext, config::Config};
 
 #[get("/")]
 pub fn index() -> Template {
@@ -72,4 +73,9 @@ pub fn hello(name: String) -> Template {
             parent: "layout",
         },
     )
+}
+
+#[get("/invite")]
+pub fn invite(config: State<'_, Config>) -> Redirect {
+    Redirect::to(config.invite_url.clone())
 }
