@@ -150,7 +150,7 @@ groups:
             description: Set the channel for role assignments
 
           - name: roles sendinfo
-            aliases: ["sendhelp"]
+            aliases: ["roles sendhelp"]
             description: >-
                 Send roles help message to role channel for members as a 
                 reference for all available role groups, role names, and limits
