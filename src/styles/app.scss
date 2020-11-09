@@ -1,4 +1,4 @@
-$body-font: "Open Sans", Helvetica, Arial, sans-serif;
+$body-font: "Poppins", Helvetica, Arial, sans-serif;
 @import "colors.scss";
 
 body {
@@ -14,10 +14,6 @@ body {
 .anchor-target {
     padding-top: 6rem;
     margin-top: -6rem;
-}
-
-.select-all {
-    user-select: all;
 }
 
 .dim-active {
