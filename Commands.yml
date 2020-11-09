@@ -211,6 +211,21 @@ groups:
           - name: settings memberlog on/off/toggle
             description: Enable or disable member join/leave logs
 
+          - name: settings mute role
+            description: Set the mute role
+            usage: "[role name or ID or mention]"
+            examples:
+                - settings mute role mute
+
+          - name: settings mute defaultduration
+            description: >-
+                Set the default duration for mutes when muting by manually
+                adding a role to a member, or if a duration is not provided when
+                using the mute command. The default duration is 1 day (24 hours).
+            usage: "[duration]"
+            examples:
+                - settings mute defaultduration 6 hours
+
           - name: settings mutedm set
             description: Set the message sent to DM members when they are muted
 
