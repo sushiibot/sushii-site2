@@ -10,8 +10,12 @@ groups:
             description: Set the bot prefix for this guild. Use without an argument to get the current prefix
             usage: "(prefix)"
             examples:
-                - prefix
-                - prefix $
+                - command: prefix
+                - content: "The current guild prefix is: `s!!`"
+                  bot: true
+                - command: prefix $
+                - content: "Updated prefix to `*`"
+                  bot: true
 
           - name: invite
             description: Get the invite link for sushii to add to another server
@@ -27,8 +31,8 @@ groups:
             usage: "[num messages]"
             aliases: ["p"]
             examples:
-                - prune 30
-                - p 5
+                - command: prune 30
+                - command: p 5
 
           - name: ban
             description: >-
@@ -36,7 +40,7 @@ groups:
                 space or comma. Users do not need to be in the guild.
             usage: "[one or more user IDs or mentions] (reason)"
             examples:
-                - ban 963258741258369 741258963258741 raiders
+                - command: ban 963258741258369 741258963258741 raiders
 
           - name: unban
             description: >-
@@ -44,7 +48,7 @@ groups:
                 space or comma.
             usage: "[one or more user IDs or mentions] (reason)"
             examples:
-                - unban 963258741258369 741258963258741 accidental ban
+                - command: unban 963258741258369 741258963258741 accidental ban
 
           - name: kick
             description: >-
@@ -52,7 +56,7 @@ groups:
                 space or comma.
             usage: "[one or more user IDs or mentions] (reason)"
             examples:
-                - kick 963258741258369 741258963258741 raiders
+                - command: kick 963258741258369 741258963258741 raiders
 
           - name: mute
             description: >-
@@ -60,8 +64,8 @@ groups:
                 space or comma.
             usage: "[one or more user IDs or mentions] (duration) (reason)"
             examples:
-                - mute 963258741258369 741258963258741 spamming
-                - mute 963258741258369 741258963258741 1 day spamming
+                - command: mute 963258741258369 741258963258741 spamming
+                - command: mute 963258741258369 741258963258741 1 day spamming
 
           - name: mute setduration
             aliases:
@@ -75,8 +79,8 @@ groups:
                 indef, inf, none) to remove duration.
             usage: "[user ID or mention] (new duration or indefinite)"
             examples:
-                - mute setduration 963258741258369 3 days
-                - mute s 741258963258741 indefinite
+                - command: mute setduration 963258741258369 3 days
+                - command: mute s 741258963258741 indefinite
 
           - name: mute addduration
             aliases:
@@ -90,8 +94,8 @@ groups:
                 Add to the duration of an existing mute.
             usage: "[user ID or mention] (duration)"
             examples:
-                - mute addduration 963258741258369 1 day
-                - mute a 741258963258741 30 min
+                - command: mute addduration 963258741258369 1 day
+                - command: mute a 741258963258741 30 min
 
           - name: unmute
             description: >-
@@ -99,7 +103,7 @@ groups:
                 space or comma.
             usage: "[one or more user IDs or mentions] (reason)"
             examples:
-                - unmute 963258741258369 741258963258741 accidental mute
+                - command: unmute 963258741258369 741258963258741 accidental mute
 
           - name: listmutes
             description: >-
@@ -114,7 +118,7 @@ groups:
                 with a space or comma.
             usage: "[one or more user IDs or mentions] (reason)"
             examples:
-                - warn 963258741258369 741258963258741 spamming
+                - command: warn 963258741258369 741258963258741 spamming
 
           - name: history
             description: >-
@@ -122,7 +126,7 @@ groups:
                 mute, kick, ban will be shown.
             usage: "[ID or mention]"
             examples:
-                - history 963258741258369
+                - command: history 963258741258369
 
           - name: reason
             description: >-
@@ -132,9 +136,9 @@ groups:
                 the given reason for easier bulk actions.
             usage: "[latest or case ID or case ID range] [reason]"
             examples:
-                - reason latest spamming
-                - reason 12 spamming
-                - reason 12-15 spamming
+                - command: reason latest spamming
+                - command: reason 12 spamming
+                - command: reason 12-15 spamming
 
     - name: roles
       description: Self assigned role settings
@@ -174,15 +178,15 @@ groups:
           - name: settings joinmsg on/off/toggle
             description: Enable or disable message on new member join
             examples:
-                - settings joinmsg on
-                - settings joinmsg off
-                - settings joinmsg toggle
+                - command: settings joinmsg on
+                - command: settings joinmsg off
+                - command: settings joinmsg toggle
 
           - name: settings joinreact set
             description: Set the reaction to new member join message
             usage: "[reaction]"
             examples:
-                - "settings joinreact set 👋"
+                - command: "settings joinreact set 👋"
 
           - name: settings joinreact on/off/toggle
             description: Enable or disable reaction to new member join message
@@ -215,7 +219,7 @@ groups:
             description: Set the mute role
             usage: "[role name or ID or mention]"
             examples:
-                - settings mute role mute
+                - command: settings mute role mute
 
           - name: settings mute defaultduration
             description: >-
@@ -224,7 +228,7 @@ groups:
                 using the mute command. The default duration is 1 day (24 hours).
             usage: "[duration]"
             examples:
-                - settings mute defaultduration 6 hours
+                - command: settings mute defaultduration 6 hours
 
           - name: settings mutedm set
             description: Set the message sent to DM members when they are muted

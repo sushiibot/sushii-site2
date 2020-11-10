@@ -46,35 +46,10 @@
                     </p>
                 </div>
                 <div class="w-100 w-50-l">
+                    {{! Example list }}
                     {{# if this.examples}}
                     <p class="white-90 ma0 pa3 measure fw6">Examples</p>
-                    {{/if}}
-
-                    {{# if this.examples}}
-                    {{! Example list }}
-                    <ul class="list pa0 ma3 mt0 bg-discord-dark br2 ba b--white-10">
-                        {{#each this.examples}}
-                        {{! Example Discord message card }}
-                        <li class="pa1 flex pa2 hover-bg-discord-darken">
-                            {{! Avatar }}
-                            <img src="/static/images/meowmeow.jpg" class="br-100 h3 w3 pointer dim-active"
-                                title="meowmeow">
-                            {{! Author + Message }}
-                            <div class="ml3 flex-grow">
-                                <p class="lh-copy ma0 mt1">
-                                    <span class="fw6 light-red underline-hover pointer">User</span> <span
-                                        class="gray f7 ml1">Today at
-                                        12:30
-                                        PM</span>
-                                </p>
-                                <p class="lh-copy ma0">
-                                    s!!{{ this }}
-                                </p>
-                            </div>
-                        </li>
-                        {{/each}}
-                    </ul>
-
+                    {{> components/discord_messages messages=this.examples }}
                     {{/if}}
                 </div>
             </div>

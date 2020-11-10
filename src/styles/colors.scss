@@ -1,17 +1,31 @@
 // colors, based off ayu theme
+$light-orange: #ffcc66;
+$blue: #73d0ff;
+$dark-blue: #33415e;
+$light-blue: #5ccfe6;
+$light-red: #f28779;
+$shadow: #141925;
+$medium-grey: #707a8c66;
+$light-grey: #707a8ccc;
+// Discord colors for examples
+$discord-dark: #36393f;
+$discord-darken: rgba(4, 4, 5, 0.07);
+$discord-code: #2f3136;
+$discord-bot-badge: #7289da;
 
 $colors: (
-    "light-orange": #ffcc66,
-    "blue": #73d0ff,
-    "dark-blue": #33415e,
-    "light-blue": #5ccfe6,
-    "light-red": #f28779,
-    "shadow": #141925,
-    "medium-grey": #707a8c66,
-    "light-grey": #707a8ccc,
+    "light-orange": $light-orange,
+    "blue": $blue,
+    "dark-blue": $dark-blue,
+    "light-blue": $light-blue,
+    "light-red": $light-red,
+    "shadow": $shadow,
+    "medium-grey": $medium-grey,
+    "light-grey": $light-grey,
     // Discord colors for examples
-    "discord-dark": #36393f,
-    "discord-darken": rgba(4, 4, 5, 0.07),
+    "discord-dark": $discord-dark,
+    "discord-darken": $discord-darken,
+    "discord-bot-badge": $discord-bot-badge,
 );
 
 @each $name, $color in $colors {

@@ -1,0 +1,34 @@
+<li class="pa1 flex pa2 hover-bg-discord-darken">
+    {{! Avatar }}
+    <img src="
+    {{#if message.bot}}
+    /static/images/sushii2.png
+    {{else}}
+    /static/images/meowmeow.jpg
+    {{/if}}
+    " class="br-100 h3 w3 pointer dim-active" title="meowmeow">
+    {{! Author + Message }}
+    <div class="ml3 flex-grow">
+        <p class="lh-copy ma0 mt1">
+            <span class="fw6">
+                {{#if message.bot }}
+                <span class="light-red underline-hover pointer">sushii2</span>
+                <span class="f8 fw5 ph1 br2 dib white bg-discord-bot-badge ttu v-mid mb1">bot</span>
+                {{else}}
+                <span class="blue underline-hover pointer">User</span>
+                {{/if ~}}
+            </span>
+            <span class="gray f7 ml1">
+                Today at 12:30 PM
+            </span>
+        </p>
+        <div class="lh-copy ma0 markdown">
+            {{#if message.command }}
+            s!!{{ message.command }}
+            {{/if}}
+            {{#if message.content }}
+            {{{ message.content }}}
+            {{/if}}
+        </div>
+    </div>
+</li>

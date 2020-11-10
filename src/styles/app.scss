@@ -1,5 +1,6 @@
 $body-font: "Poppins", Helvetica, Arial, sans-serif;
 @import "colors.scss";
+@import "markdown.scss";
 
 body {
     font-family: $body-font;
@@ -31,4 +32,8 @@ body {
 
 .lh-3 {
     line-height: 2.5;
+}
+
+.f8 {
+    font-size: 0.65rem;
 }
