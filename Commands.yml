@@ -226,7 +226,9 @@ groups:
                 Set the default duration for mutes when muting by manually
                 adding a role to a member, or if a duration is not provided when
                 using the mute command. The default duration is 1 day (24 hours).
-            usage: "[duration]"
+                You can disable the default duration by using 0 or "indefinite"
+                as the duration. This would make mutes not automatically expire.
+            usage: "[duration or indefinite]"
             examples:
                 - command: settings mute defaultduration 6 hours
 
