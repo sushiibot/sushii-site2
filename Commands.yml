@@ -231,6 +231,11 @@ groups:
             usage: "[duration or indefinite]"
             examples:
                 - command: settings mute defaultduration 6 hours
+                  content: Set the default mute duration to `30m`
+                  bot: true
+                - command: settings mute defaultduration 0
+                - content: Default mute duration set to indefinite (will not expire)
+                  bot: true
 
           - name: settings mutedm set
             description: Set the message sent to DM members when they are muted
