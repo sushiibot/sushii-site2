@@ -133,12 +133,23 @@ groups:
                 Set the reason for a moderation case. This will also set the
                 moderator who performed this action. If a range is provided (eg.
                 12-15), it will update all cases (inclusive) 12, 13, 14, 15 with
-                the given reason for easier bulk actions.
-            usage: "[latest or case ID or case ID range] [reason]"
+                the given reason for easier bulk actions. Using latest will
+                update the most recent case, and latest~n will update the most
+                recent n cases.
+            usage: "[latest or latest~n or case ID or case ID range] [reason]"
             examples:
                 - command: reason latest spamming
+                - content: "Finished updating latest 1 case with reason: `spamming`"
+                  bot: true
+                - command: reason latest~3 spamming
+                - content: "Finished updating latest 3 cases with reason: `spamming`"
+                  bot: true
                 - command: reason 12 spamming
+                - content: "Finished updating 1 case with reason: `spamming`"
+                  bot: true
                 - command: reason 12-15 spamming
+                - content: "Finished updating 4 cases with reason: `spamming`"
+                  bot: true
 
     - name: roles
       description: Self assigned role settings
