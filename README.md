@@ -2,6 +2,9 @@
 
 # sushii site 2
 
+**Note:** This has been deprecated in favour of
+[sushii-web](https://github.com/sushiibot/sushii-web).
+
 Site for [sushii2](https://github.com/drklee3/sushii-2). Working with
 [rocket-rs](https://rocket.rs/) for the first time.
 
